@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.2",
+    "react-icons": "^5.5.0"
+  }
+}
