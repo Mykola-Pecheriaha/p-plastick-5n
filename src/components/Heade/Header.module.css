@@ -1,0 +1,599 @@
+/* Додайте ці стилі до Header.module.css */
+
+.header {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  position: sticky;
+  top: 2.5rem;
+  z-index: 40;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.logoLink {
+  text-decoration: none;
+  color: rgb(var(--foreground-rgb));
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(var(--foreground-rgb));
+}
+
+.logoImage {
+  border-radius: 4px;
+}
+
+.desktopNav {
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  position: relative;
+}
+
+.menuItem {
+  position: relative;
+  display: inline-block;
+}
+
+.navLink {
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  color: rgb(var(--foreground-rgb));
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #4a90e2;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover:after,
+.active:after {
+  width: 100%;
+}
+
+.navLink:hover,
+.active {
+  color: #4a90e2;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.menuItem:hover .chevron {
+  transform: rotate(180deg);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: rgb(var(--foreground-rgb));
+}
+
+.mobileNav {
+  display: none;
+}
+
+/* Стилі для субменю */
+.subMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+  min-width: 800px;
+  z-index: 1000;
+  margin-top: 0.5rem;
+}
+
+.subMenuSection {
+  flex: 1;
+  min-width: 180px;
+}
+
+.subMenuTitle {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: #4a90e2;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.subMenuColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.subMenuLink {
+  color: rgb(var(--foreground-rgb));
+  text-decoration: none;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.subMenuLink:hover,
+.activeSubLink {
+  color: #4a90e2;
+  padding-left: 0.5rem;
+  border-bottom-color: #4a90e2;
+}
+
+/* Мобільні стилі */
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: block;
+  }
+
+  .mobileNav {
+    display: block;
+    padding: 1rem 0;
+  }
+
+  .mobileNavList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobileMenuItem {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .mobileMenuHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobileNavLink {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(var(--foreground-rgb));
+    flex: 1;
+  }
+
+  .mobileNavLink.active {
+    background-color: rgba(74, 144, 226, 0.1);
+    color: #4a90e2;
+  }
+
+  .mobileSubMenuToggle {
+    background: none;
+    border: none;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    color: rgb(var(--foreground-rgb));
+  }
+
+  .mobileChevron {
+    transition: transform 0.3s ease;
+  }
+
+  .mobileChevron.rotated {
+    transform: rotate(180deg);
+  }
+
+  .mobileSubMenu {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.5rem 0;
+  }
+
+  .dark .mobileSubMenu {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .mobileSubMenuSection {
+    margin-bottom: 1rem;
+  }
+
+  .mobileSubMenuTitle {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #4a90e2;
+    padding: 0 1rem;
+  }
+
+  .mobileSubMenuLink {
+    display: block;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: rgb(var(--foreground-rgb));
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .mobileSubMenuLink:hover,
+  .mobileSubMenuLink.activeSubLink {
+    background-color: rgba(74, 144, 226, 0.1);
+    color: #4a90e2;
+  }
+
+  .subMenu {
+    display: none;
+  }
+}
+
+/* Темна тема */
+.dark .subMenu {
+  background-color: var(--card-bg);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+.dark .navLink,
+.dark .mobileNavLink,
+.dark .mobileSubMenuLink {
+  color: rgb(var(--foreground-rgb));
+}
+
+.dark .logo {
+  color: rgb(var(--foreground-rgb));
+}
+
+.dark .mobileMenuButton {
+  color: rgb(var(--foreground-rgb));
+}
+
+.dark .mobileSubMenuToggle {
+  color: rgb(var(--foreground-rgb));
+}
+/* Додайте ці стилі до Header.module.css */
+
+.navButton {
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  color: rgb(var(--foreground-rgb));
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.navButton:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #4a90e2;
+  transition: width 0.3s ease;
+}
+
+.navButton:hover:after,
+.navButton.active:after {
+  width: 100%;
+}
+
+.navButton:hover,
+.navButton.active {
+  color: #4a90e2;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.mobileChevron {
+  transition: transform 0.3s ease;
+}
+
+.mobileChevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* Оновлені стилі для субменю з анімацією */
+.subMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+  min-width: 800px;
+  z-index: 1000;
+  margin-top: 0.5rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileSubMenu {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 0;
+  animation: slideDown 0.3s ease-out;
+  overflow: hidden;
+}
+
+.dark .mobileSubMenu {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Стилі для темної теми */
+.dark .navButton {
+  color: rgb(var(--foreground-rgb));
+}
+
+.dark .subMenu {
+  background-color: var(--card-bg);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+/* Адаптивність */
+@media (max-width: 1024px) {
+  .subMenu {
+    min-width: 600px;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .subMenu {
+    display: none;
+  }
+}
+/* Додайте ці стилі до Header.module.css */
+
+.navButton {
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  color: rgb(var(--foreground-rgb));
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.navButton:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #4a90e2;
+  transition: width 0.3s ease;
+}
+
+.navButton:hover:after,
+.navButton.active:after {
+  width: 100%;
+}
+
+.navButton:hover,
+.navButton.active {
+  color: #4a90e2;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.mobileChevron {
+  transition: transform 0.3s ease;
+}
+
+.mobileChevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* Оновлені стилі для субменю з анімацією */
+.subMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+  min-width: 800px;
+  z-index: 1000;
+  margin-top: 0.5rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileSubMenu {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 0;
+  animation: slideDown 0.3s ease-out;
+  overflow: hidden;
+}
+
+.dark .mobileSubMenu {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Стилі для темної теми */
+.dark .navButton {
+  color: rgb(var(--foreground-rgb));
+}
+
+.dark .subMenu {
+  background-color: var(--card-bg);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+/* Адаптивність */
+@media (max-width: 1024px) {
+  .subMenu {
+    min-width: 600px;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .subMenu {
+    display: none;
+  }
+}
+/* Додайте ці стилі до Header.module.css */
+
+.navLinkWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.navLink {
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  color: rgb(var(--foreground-rgb));
+  transition: color 0.3s ease;
+}
+
+.navLink:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #4a90e2;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover:after,
+.navLink.active:after {
+  width: 100%;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: #4a90e2;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+  margin-left: 0.25rem;
+  color: rgb(var(--foreground-rgb));
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* Стилі для темної теми */
+.dark .navLink {
+  color: rgb(var(--foreground-rgb));
+}
+
+.dark .chevron {
+  color: rgb(var(--foreground-rgb));
+}
