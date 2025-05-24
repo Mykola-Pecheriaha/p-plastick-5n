@@ -4,7 +4,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url('/images/bigbort/BigBort3.jpg');
+  background-image: url("/images/bigbort/BigBort3.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -13,6 +13,7 @@
   padding: 2rem 0;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
+  margin-top: 0; /* 👈 Прибираємо верхній відступ */
 }
 
 /* Контейнер для контенту */
@@ -109,9 +110,10 @@
   text-shadow: var(--bigbord-text-shadow);
 }
 
+/* 🎯 КНОПКА З АДАПТИВНИМИ КОЛЬОРАМИ ДЛЯ ТЕМ */
 .consultationButton {
-  background: linear-gradient(135deg, #0891b2 0%, #0f766e 100%);
-  color: white;
+  background: var(--consultation-button-bg); /* 👈 Використовує змінну з globals.css */
+  color: var(--consultation-button-text); /* 👈 Колір тексту залежно від теми */
   border: none;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
@@ -119,14 +121,14 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
+  box-shadow: 0 4px 12px var(--consultation-button-shadow); /* 👈 Тінь залежно від теми */
   align-self: flex-start;
 }
 
 .consultationButton:hover {
-  background: linear-gradient(135deg, #0e7490 0%, #0d5d56 100%);
+  background: var(--consultation-button-hover); /* 👈 Колір при наведенні залежно від теми */
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(8, 145, 178, 0.4);
+  box-shadow: 0 6px 20px var(--consultation-button-shadow); /* 👈 Більша тінь при наведенні */
 }
 
 .imageContent {

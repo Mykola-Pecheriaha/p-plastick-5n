@@ -1,0 +1,142 @@
+/* 🎯 DOCTOR КОМПОНЕНТ З ФІОЛЕТОВИМ ФОНОМ */
+.doctor {
+  width: 100vw;
+  background-color: var(--doctor-bg); /* 👈 Використовує змінну #9164ac */
+  padding: 4rem 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 👈 Розділення 1/3 і 2/3 */
+  gap: 3rem;
+  align-items: center;
+}
+
+/* 🎯 ЛІВА ЧАСТИНА - ІМ'Я ЛІКАРЯ */
+.nameSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doctorName {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--doctor-name-color); /* 👈 Білий колір для імені */
+  text-shadow: var(--doctor-text-shadow);
+  text-align: center;
+  margin: 0;
+}
+
+/* 🎯 ПРАВА ЧАСТИНА - ТЕКСТ */
+.textSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.textContent {
+  max-width: 100%;
+}
+
+.introText {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--doctor-text-primary); /* 👈 Білий колір тексту */
+  text-shadow: var(--doctor-text-shadow);
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--doctor-text-secondary); /* 👈 Світло-фіолетовий колір */
+  text-shadow: var(--doctor-text-shadow);
+  margin-bottom: 1.25rem;
+}
+
+.highlight {
+  color: var(--doctor-text-primary); /* 👈 Виділений текст білим */
+  font-weight: 700;
+}
+
+/* 🎯 АДАПТИВНІСТЬ ДЛЯ ПЛАНШЕТІВ */
+@media (max-width: 992px) {
+  .content {
+    gap: 2.5rem;
+  }
+
+  .doctorName {
+    font-size: 2.5rem;
+  }
+
+  .introText {
+    font-size: 1.075rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+}
+
+/* 🎯 АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ */
+@media (max-width: 768px) {
+  .doctor {
+    padding: 3rem 0;
+  }
+
+  .content {
+    grid-template-columns: 1fr; /* 👈 Одна колонка на мобільних */
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .doctorName {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .introText {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+}
+
+/* 🎯 ДУЖЕ МАЛІ ЕКРАНИ */
+@media (max-width: 480px) {
+  .doctor {
+    padding: 2.5rem 0;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .doctorName {
+    font-size: 1.875rem;
+  }
+
+  .introText {
+    font-size: 0.95rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+}

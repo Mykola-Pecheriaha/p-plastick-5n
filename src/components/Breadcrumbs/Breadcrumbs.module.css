@@ -1,6 +1,7 @@
+/* 🎯 BREADCRUMBS З БІЛИМ ФОНОМ */
 .breadcrumbs {
-  background-color: var(--card-bg);
-  border-bottom: 1px solid var(--border-color);
+  background-color: #ffffff; /* 👈 Білий фон для всіх тем */
+  border-bottom: none; /* 👈 Прибираємо нижню границю */
   padding: 0.75rem 0;
   position: sticky;
   top: 6.5rem;
@@ -14,6 +15,7 @@
   list-style: none;
   margin: 0;
   padding: 0 1rem;
+  align-items: center;
 }
 
 .breadcrumbItem {
@@ -24,23 +26,52 @@
 .breadcrumbLink {
   display: flex;
   align-items: center;
-  color: #4a90e2;
+  gap: 0.5rem;
+  color: #4a90e2; /* 👈 Синій колір для посилань */
   text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  opacity: 0.8;
 }
 
 .breadcrumbLink:hover {
-  text-decoration: underline;
+  color: #3a80d2; /* 👈 Темніший синій при наведенні */
+  background-color: rgba(74, 144, 226, 0.1);
+  opacity: 1;
+}
+
+/* 🎯 СТИЛІ ДЛЯ ГОЛОВНОЇ СТОРІНКИ */
+.homeCurrentPage {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4a90e2; /* 👈 Синій колір для поточної сторінки */
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(74, 144, 226, 0.15); /* 👈 Світло-синій фон */
+}
+
+.homeText {
+  font-size: 0.875rem;
 }
 
 .currentPage {
-  font-weight: 500;
+  font-weight: 600;
+  color: #4a90e2; /* 👈 Синій колір поточної сторінки */
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(74, 144, 226, 0.15); /* 👈 Світло-синій фон */
 }
 
 .separator {
   margin: 0 0.5rem;
-  color: #f5f7fa;
+  color: #9ca3af; /* 👈 Сірий колір роздільників */
+  opacity: 0.7;
 }
 
+/* Адаптивність */
 @media (max-width: 640px) {
   .breadcrumbs {
     top: 5.5rem;
@@ -48,5 +79,21 @@
 
   .breadcrumbsList {
     padding: 0 0.5rem;
+  }
+
+  .homeText {
+    display: none; /* Приховуємо текст "Головна" на мобільних, залишаємо тільки іконку */
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumbsList {
+    font-size: 0.8rem;
+  }
+
+  .breadcrumbLink,
+  .homeCurrentPage,
+  .currentPage {
+    padding: 0.2rem 0.4rem;
   }
 }
