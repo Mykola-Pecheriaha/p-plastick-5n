@@ -1,11 +1,10 @@
 import React from 'react';
+import BigBord from '@/components/BigBord/BigBord';
 
-const Home: React.FC = () => {
+export default function Home() {
   return (
     <div>
-      <h1>Ласкаво просимо</h1>
-      <p>це головна сторінка сайту</p>
+      <BigBord backgroundImage="/images/bigbort/BigBort3.jpg" />
     </div>
   );
-};
-export default Home;
+}
