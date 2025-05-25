@@ -4,7 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import Image from "next/image"
 import styles from "./BigBord.module.css"
-import ContactForm from "../ContactForm/ContactForm"
+import ContactForm from "@/components/ContactForm/ContactForm"
 
 interface BigBordProps {
   backgroundColor?: string
@@ -89,10 +89,10 @@ const BigBord: React.FC<BigBordProps> = ({ backgroundColor, backgroundImage }) =
             <div className={styles.imageContent}>
               <div className={styles.imageWrapper}>
                 <Image
-                  src="/images/bigbort/bigbort.png"
+                  src="/images/bigbort/bigbort-removebg-preview.png"
                   alt="Печеряга Микола Миколайович - пластичний хірург"
-                  width={600}
-                  height={650}
+                  width={500}
+                  height={600}
                   className={styles.doctorImage}
                   priority
                 />

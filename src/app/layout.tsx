@@ -20,11 +20,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="flex min-h-screen flex-col">
+            {/* 👈 Фіксовані елементи зверху */}
             <Contacts />
             <Header />
             <Breadcrumbs />
-            {/* 👈 Прибираємо padding для головної сторінки */}
+
+            {/* 👈 Основний контент */}
             <main className="flex-1">{children}</main>
+
+            {/* 👈 Футер знизу */}
             <Footer />
           </div>
         </ThemeProvider>

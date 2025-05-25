@@ -3,10 +3,11 @@
   background-color: #ffffff; /* 👈 Білий фон для всіх тем */
   border-bottom: none; /* 👈 Прибираємо нижню границю */
   padding: 0.75rem 0;
-  position: sticky;
-  top: 6.5rem;
+  position: sticky; /* 👈 Переконуємося що sticky працює */
+  top: 6.5rem; /* 👈 Відступ від Header */
   z-index: 30;
   font-size: 0.875rem;
+  width: 100%; /* 👈 Додано для стабільності */
 }
 
 .breadcrumbsList {
@@ -74,7 +75,7 @@
 /* Адаптивність */
 @media (max-width: 640px) {
   .breadcrumbs {
-    top: 5.5rem;
+    top: 9rem; /* 👈 Збільшений відступ для мобільних */
   }
 
   .breadcrumbsList {

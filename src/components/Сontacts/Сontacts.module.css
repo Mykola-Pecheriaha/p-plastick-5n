@@ -1,10 +1,12 @@
+/* 🎯 КОНТАКТИ З НОВИМИ КОЛЬОРАМИ */
 .contactsContainer {
-  background-color: var(--card-bg);
-  border-bottom: 1px solid var(--border-color);
-  position: sticky;
+  background-color: var(--header-footer-bg); /* 👈 Використовує змінну */
+  border-bottom: 1px solid var(--header-footer-border);
+  position: sticky; /* 👈 Переконуємося що sticky працює */
   top: 0;
   z-index: 50;
   font-size: 0.875rem;
+  width: 100%; /* 👈 Додано для стабільності */
 }
 
 .container {
@@ -32,10 +34,11 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.25rem 0;
+  color: var(--header-footer-text); /* 👈 Колір тексту */
 }
 
 .icon {
-  color: #4a90e2;
+  color: var(--header-footer-accent); /* 👈 Колір іконок */
 }
 
 .socialLinks {
@@ -50,14 +53,14 @@
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 50%;
-  background-color: rgba(74, 144, 226, 0.1);
-  color: #4a90e2;
+  background-color: var(--header-footer-accent); /* 👈 Фон іконок */
+  color: var(--header-footer-bg); /* 👈 Колір іконок */
   transition: all 0.3s ease;
 }
 
 .socialLink:hover {
-  background-color: #4a90e2;
-  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(73, 5, 113, 0.3);
 }
 
 @media (max-width: 768px) {

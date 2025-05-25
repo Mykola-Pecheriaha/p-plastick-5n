@@ -14,12 +14,18 @@
   --card-bg: #1a202c;
 }
 
+/* 🎯 ЗАПОБІГАННЯ ГОРИЗОНТАЛЬНОГО СКРОЛІНГУ БЕЗ ПОРУШЕННЯ STICKY */
+html {
+  overflow-x: hidden; /* 👈 Тільки на html */
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  /* 👈 Прибрано overflow-x: hidden з body */
 }
 
 /* BigBord компонент змінні */
@@ -45,12 +51,21 @@ body {
   --header-footer-border: rgba(73, 5, 113, 0.2);
   --header-footer-accent: #490571;
 
-  /* 🎯 НОВІ ЗМІННІ ДЛЯ DOCTOR КОМПОНЕНТА */
-  --doctor-bg: #59078b;
+  /* 🎯 ЗМІННІ ДЛЯ DOCTOR КОМПОНЕНТА */
+  --doctor-bg: #9164ac;
   --doctor-text-primary: #ffffff;
   --doctor-text-secondary: #f3e8ff;
   --doctor-name-color: #ffffff;
   --doctor-text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+
+  /* 🎯 НОВІ ЗМІННІ ДЛЯ GALLERY КОМПОНЕНТА */
+  --gallery-bg: #ede8f5;
+  --gallery-text-primary: #2d3748;
+  --gallery-text-secondary: #4a5568;
+  --gallery-accent: #6b46c1;
+  --gallery-button-bg: #6b46c1;
+  --gallery-button-hover: #553c9a;
+  --gallery-button-text: #ffffff;
 }
 
 .dark {
@@ -81,6 +96,15 @@ body {
   --doctor-text-secondary: #f3e8ff;
   --doctor-name-color: #ffffff;
   --doctor-text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+  /* 🎯 ЗМІННІ ДЛЯ GALLERY КОМПОНЕНТА В ТЕМНІЙ ТЕМІ */
+  --gallery-bg: #ede8f5;
+  --gallery-text-primary: #2d3748;
+  --gallery-text-secondary: #4a5568;
+  --gallery-accent: #6b46c1;
+  --gallery-button-bg: #6b46c1;
+  --gallery-button-hover: #553c9a;
+  --gallery-button-text: #ffffff;
 }
 
 /* Утилітарні класи */

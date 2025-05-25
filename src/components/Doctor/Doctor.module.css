@@ -1,10 +1,9 @@
 /* 🎯 DOCTOR КОМПОНЕНТ З ФІОЛЕТОВИМ ФОНОМ */
 .doctor {
-  width: 100vw;
-  background-color: var(--doctor-bg); /* 👈 Використовує змінну #9164ac */
+  width: 100%; /* 👈 Змінено з 100vw на 100% */
+  background-color: var(--doctor-bg);
   padding: 4rem 0;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  margin: 0; /* 👈 Прибрані calc відступи */
   position: relative;
 }
 
@@ -17,7 +16,7 @@
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* 👈 Розділення 1/3 і 2/3 */
+  grid-template-columns: 1fr 2fr;
   gap: 3rem;
   align-items: center;
 }
@@ -33,7 +32,7 @@
   font-size: 3rem;
   font-weight: 800;
   line-height: 1.1;
-  color: var(--doctor-name-color); /* 👈 Білий колір для імені */
+  color: var(--doctor-name-color);
   text-shadow: var(--doctor-text-shadow);
   text-align: center;
   margin: 0;
@@ -53,7 +52,7 @@
 .introText {
   font-size: 1.125rem;
   line-height: 1.7;
-  color: var(--doctor-text-primary); /* 👈 Білий колір тексту */
+  color: var(--doctor-text-primary);
   text-shadow: var(--doctor-text-shadow);
   margin-bottom: 1.5rem;
 }
@@ -61,13 +60,13 @@
 .description {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--doctor-text-secondary); /* 👈 Світло-фіолетовий колір */
+  color: var(--doctor-text-secondary);
   text-shadow: var(--doctor-text-shadow);
   margin-bottom: 1.25rem;
 }
 
 .highlight {
-  color: var(--doctor-text-primary); /* 👈 Виділений текст білим */
+  color: var(--doctor-text-primary);
   font-weight: 700;
 }
 
@@ -96,8 +95,12 @@
     padding: 3rem 0;
   }
 
+  .container {
+    padding: 0 0.75rem; /* 👈 Зменшений padding */
+  }
+
   .content {
-    grid-template-columns: 1fr; /* 👈 Одна колонка на мобільних */
+    grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
   }
@@ -105,6 +108,7 @@
   .doctorName {
     font-size: 2.25rem;
     margin-bottom: 1rem;
+    word-break: break-word; /* 👈 Перенос довгих слів */
   }
 
   .introText {
@@ -125,7 +129,7 @@
   }
 
   .container {
-    padding: 0 0.75rem;
+    padding: 0 0.5rem; /* 👈 Ще менший padding */
   }
 
   .doctorName {
@@ -138,5 +142,24 @@
 
   .description {
     font-size: 0.85rem;
+  }
+}
+
+/* 🎯 ЕКСТРА МАЛІ ЕКРАНИ */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 0.25rem; /* 👈 Мінімальний padding */
+  }
+
+  .doctorName {
+    font-size: 1.5rem;
+  }
+
+  .introText {
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
   }
 }

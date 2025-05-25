@@ -1,6 +1,6 @@
 /* Фон на всю ширину сторінки з зображенням */
 .bigBord {
-  width: 100vw;
+  width: 100%; /* 👈 Змінено з 100vw на 100% */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -11,9 +11,7 @@
   position: relative;
   overflow: hidden;
   padding: 2rem 0;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  margin-top: 0; /* 👈 Прибираємо верхній відступ */
+  margin: 0; /* 👈 Прибрані calc відступи */
 }
 
 /* Контейнер для контенту */
@@ -112,8 +110,8 @@
 
 /* 🎯 КНОПКА З АДАПТИВНИМИ КОЛЬОРАМИ ДЛЯ ТЕМ */
 .consultationButton {
-  background: var(--consultation-button-bg); /* 👈 Використовує змінну з globals.css */
-  color: var(--consultation-button-text); /* 👈 Колір тексту залежно від теми */
+  background: var(--consultation-button-bg);
+  color: var(--consultation-button-text);
   border: none;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
@@ -121,14 +119,14 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px var(--consultation-button-shadow); /* 👈 Тінь залежно від теми */
+  box-shadow: 0 4px 12px var(--consultation-button-shadow);
   align-self: flex-start;
 }
 
 .consultationButton:hover {
-  background: var(--consultation-button-hover); /* 👈 Колір при наведенні залежно від теми */
+  background: var(--consultation-button-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px var(--consultation-button-shadow); /* 👈 Більша тінь при наведенні */
+  box-shadow: 0 6px 20px var(--consultation-button-shadow);
 }
 
 .imageContent {
@@ -179,18 +177,17 @@
 /* Адаптивність для мобільних */
 @media (max-width: 768px) {
   .bigBord {
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
+    width: 100%; /* 👈 Залишаємо 100% замість calc */
+    padding: 2rem 0;
+  }
+
+  .container {
+    padding: 0 0.75rem; /* 👈 Зменшений padding для мобільних */
   }
 
   .content {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  .bigBord {
-    min-height: auto;
-    padding: 2rem 0;
   }
 
   .doctorName {
@@ -237,7 +234,7 @@
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 0.75rem;
+    padding: 0 0.5rem; /* 👈 Ще менший padding для дуже малих екранів */
   }
 
   .doctorName {
@@ -251,5 +248,41 @@
 
   .advantageTitle {
     font-size: 1rem;
+  }
+}
+
+/* 🎯 ДОДАТКОВІ ПРАВИЛА ДЛЯ ЗАПОБІГАННЯ ГОРИЗОНТАЛЬНОГО СКРОЛІНГУ */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 0.25rem; /* 👈 Мінімальний padding для дуже малих екранів */
+  }
+
+  .doctorName {
+    font-size: 1.25rem;
+    word-break: break-word; /* 👈 Перенос довгих слів */
+  }
+
+  .doctorTitle {
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .advantageTitle {
+    font-size: 0.95rem;
+    word-break: break-word;
+  }
+
+  .consultationButton {
+    font-size: 1rem;
+    padding: 0.875rem;
+  }
+
+  .imageWrapper {
+    height: 300px;
+    max-width: 250px;
   }
 }

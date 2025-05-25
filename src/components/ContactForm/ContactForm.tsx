@@ -1,59 +1,55 @@
-'use client';
+"use client"
 
-import type React from 'react';
-import { useState } from 'react';
-import styles from './ContactForm.module.css';
-import { X, Check } from 'lucide-react';
+import type React from "react"
+import { useState } from "react"
+import styles from "./ContactForm.module.css"
+import { X, Check } from "lucide-react"
 
 interface ContactFormProps {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen: boolean
+  onClose: () => void
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    service: '',
-    message: '',
-  });
+    name: "",
+    phone: "",
+    email: "",
+    service: "",
+    message: "",
+  })
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+    e.preventDefault()
+    setIsSubmitting(true)
 
     // Імітація відправки форми
     setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1500);
-  };
+      setIsSubmitting(false)
+      setIsSubmitted(true)
+    }, 1500)
+  }
 
   const handleClose = () => {
-    setIsSubmitted(false);
+    setIsSubmitted(false)
     setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      service: '',
-      message: '',
-    });
-    onClose();
-  };
+      name: "",
+      phone: "",
+      email: "",
+      service: "",
+      message: "",
+    })
+    onClose()
+  }
 
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
   if (isSubmitted) {
     return (
@@ -67,17 +63,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
               <Check size={48} />
             </div>
             <h3 className={styles.successTitle}>Дякуємо за заявку!</h3>
-            <p className={styles.successText}>
-              Ми зв`яжемося з вами найближчим часом для підтвердження
-              консультації.
-            </p>
+            <p className={styles.successText}>Ми зв`яжемося з вами найближчим часом для підтвердження консультації.</p>
             <button className={styles.successButton} onClick={handleClose}>
               Закрити
             </button>
           </div>
         </div>
       </div>
-    );
+    )
   }
 
   return (
@@ -176,17 +169,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
             />
           </div>
 
-          <button
-            type="submit"
-            className={styles.submitButton}
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'Відправка...' : 'Записатися на консультацію'}
+          <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
+            {isSubmitting ? "Відправка..." : "Записатися на консультацію"}
           </button>
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm
