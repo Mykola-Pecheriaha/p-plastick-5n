@@ -24,6 +24,7 @@
 /* 🎯 ЛІВА ЧАСТИНА - ІМ'Я ЛІКАРЯ */
 .nameSection {
   display: flex;
+  flex-direction: column; /* 👈 Змінено на колонку */
   justify-content: center;
   align-items: center;
 }
@@ -36,6 +37,30 @@
   text-shadow: var(--doctor-text-shadow);
   text-align: center;
   margin: 0;
+}
+
+.doctorButton {
+  background-color: var(--doctor-button-bg);
+  color: var(--doctor-button-text);
+  border: none;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--doctor-button-shadow);
+  margin-top: 20px; /* 👈 20px під ім'ям */
+  white-space: nowrap;
+}
+
+.doctorButton:hover {
+  background-color: var(--doctor-button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--doctor-button-shadow);
 }
 
 /* 🎯 ПРАВА ЧАСТИНА - ТЕКСТ */
@@ -96,7 +121,7 @@
   }
 
   .container {
-    padding: 0 0.75rem; /* 👈 Зменшений padding */
+    padding: 0 0.75rem;
   }
 
   .content {
@@ -107,8 +132,14 @@
 
   .doctorName {
     font-size: 2.25rem;
-    margin-bottom: 1rem;
-    word-break: break-word; /* 👈 Перенос довгих слів */
+    margin-bottom: 0; /* 👈 Прибрано margin-bottom */
+    word-break: break-word;
+  }
+
+  .doctorButton {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px; /* 👈 Залишаємо 20px */
   }
 
   .introText {
@@ -129,11 +160,16 @@
   }
 
   .container {
-    padding: 0 0.5rem; /* 👈 Ще менший padding */
+    padding: 0 0.5rem;
   }
 
   .doctorName {
     font-size: 1.875rem;
+  }
+
+  .doctorButton {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
   }
 
   .introText {

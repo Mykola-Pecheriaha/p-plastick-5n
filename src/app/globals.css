@@ -57,6 +57,10 @@ body {
   --doctor-text-secondary: #f3e8ff;
   --doctor-name-color: #ffffff;
   --doctor-text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  --doctor-button-bg: #ffffff;
+  --doctor-button-hover: #f0f0f0;
+  --doctor-button-text: #9164ac;
+  --doctor-button-shadow: rgba(255, 255, 255, 0.3);
 
   /* 🎯 НОВІ ЗМІННІ ДЛЯ GALLERY КОМПОНЕНТА */
   --gallery-bg: #ede8f5;
@@ -66,6 +70,15 @@ body {
   --gallery-button-bg: #6b46c1;
   --gallery-button-hover: #553c9a;
   --gallery-button-text: #ffffff;
+
+  /* 🎯 НОВІ ЗМІННІ ДЛЯ BIGBORDFACE КОМПОНЕНТА */
+  --bigbordface-bg: #9164ac;
+  --bigbordface-text-primary: #ffffff;
+  --bigbordface-text-secondary: #f3e8ff;
+  --bigbordface-accent: #ffffff;
+  --bigbordface-button-bg: #ffffff;
+  --bigbordface-button-hover: #f0f0f0;
+  --bigbordface-button-text: #9164ac;
 }
 
 .dark {
@@ -96,6 +109,10 @@ body {
   --doctor-text-secondary: #f3e8ff;
   --doctor-name-color: #ffffff;
   --doctor-text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  --doctor-button-bg: #ffffff;
+  --doctor-button-hover: #f0f0f0;
+  --doctor-button-text: #9164ac;
+  --doctor-button-shadow: rgba(255, 255, 255, 0.3);
 
   /* 🎯 ЗМІННІ ДЛЯ GALLERY КОМПОНЕНТА В ТЕМНІЙ ТЕМІ */
   --gallery-bg: #ede8f5;
@@ -105,6 +122,15 @@ body {
   --gallery-button-bg: #6b46c1;
   --gallery-button-hover: #553c9a;
   --gallery-button-text: #ffffff;
+
+  /* 🎯 ЗМІННІ ДЛЯ BIGBORDFACE КОМПОНЕНТА В ТЕМНІЙ ТЕМІ */
+  --bigbordface-bg: #9164ac;
+  --bigbordface-text-primary: #ffffff;
+  --bigbordface-text-secondary: #f3e8ff;
+  --bigbordface-accent: #ffffff;
+  --bigbordface-button-bg: #ffffff;
+  --bigbordface-button-hover: #f0f0f0;
+  --bigbordface-button-text: #9164ac;
 }
 
 /* Утилітарні класи */

@@ -1,0 +1,219 @@
+/* 🎯 BIG BORD FACE КОМПОНЕНТ */
+.bigBordFace {
+  width: 100%;
+  background-color: var(--bigbordface-bg); /* 👈 Використовує змінну #9164ac */
+  padding: 4rem 0;
+  margin: 0;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* 🎯 ЗАГОЛОВОК */
+.titleSection {
+  text-align: center;
+  margin-bottom: 2.5rem; /* 👈 Відступ від заголовка до контенту */
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--bigbordface-text-primary); /* 👈 Білий колір тексту */
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: var(--doctor-text-shadow); /* 👈 Тінь для кращої читабельності */
+}
+
+/* 🎯 ОСНОВНИЙ КОНТЕНТ */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 👈 Рівні частини */
+  gap: 4rem;
+  align-items: center;
+}
+
+/* 🎯 ЛІВА ЧАСТИНА - ГАЛЕРЕЯ */
+.gallerySection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🎯 ПРАВА ЧАСТИНА - ТЕКСТ */
+.textSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.textContent {
+  max-width: 100%;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--bigbordface-text-primary); /* 👈 Білий колір тексту */
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--bigbordface-text-secondary); /* 👈 Світло-фіолетовий колір */
+}
+
+.sectionSymbol {
+  font-size: 1.5rem;
+  color: var(--bigbordface-accent); /* 👈 Білий акцент */
+  font-weight: 700;
+}
+
+.sectionText {
+  color: var(--bigbordface-text-secondary);
+}
+
+.servicesList {
+  list-style: none;
+  margin: 0 0 2.5rem 0;
+  padding: 0;
+}
+
+.serviceItem {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--bigbordface-text-primary); /* 👈 Білий колір тексту */
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.serviceItem::before {
+  content: "•";
+  color: var(--bigbordface-accent); /* 👈 Білі маркери */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.3rem;
+}
+
+.serviceButton {
+  background-color: var(--bigbordface-button-bg); /* 👈 Біла кнопка */
+  color: var(--bigbordface-button-text); /* 👈 Фіолетовий текст */
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.serviceButton:hover {
+  background-color: var(--bigbordface-button-hover); /* 👈 Світло-сірий при наведенні */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* 🎯 АДАПТИВНІСТЬ ДЛЯ ПЛАНШЕТІВ */
+@media (max-width: 992px) {
+  .content {
+    gap: 3rem;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+
+  .serviceItem {
+    font-size: 1rem;
+  }
+}
+
+/* 🎯 АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ */
+@media (max-width: 768px) {
+  .bigBordFace {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .titleSection {
+    margin-bottom: 2rem; /* 👈 Менший відступ на мобільних */
+  }
+
+  .mainTitle {
+    font-size: 1.75rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr; /* 👈 Одна колонка на мобільних */
+    gap: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .serviceButton {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* 🎯 ДУЖЕ МАЛІ ЕКРАНИ */
+@media (max-width: 480px) {
+  .bigBordFace {
+    padding: 2.5rem 0;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .mainTitle {
+    font-size: 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.25rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .serviceItem {
+    font-size: 0.95rem;
+  }
+}

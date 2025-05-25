@@ -1,5 +1,6 @@
 import type React from "react"
 import styles from "./Doctor.module.css"
+import Link from "next/link"
 
 interface DoctorProps {
   backgroundColor?: string
@@ -20,13 +21,16 @@ const Doctor: React.FC<DoctorProps> = ({ backgroundColor }) => {
               <br />
               Pecheriaha
             </h1>
+            <Link href="/portfolio" className={styles.doctorButton}>
+              Дізнатись більше
+            </Link>
           </div>
 
           {/* Права частина - 2/3 */}
           <div className={styles.textSection}>
             <div className={styles.textContent}>
               <p className={styles.introText}>
-                Я пластичний хірург з досвідом 25 років і є{" "}
+                Я пластичний хірург з досвідом 25 років є{" "}
                 <strong className={styles.highlight}>Членом Європейської асоціації пластичних хірургів</strong> Навчався
                 у найкращих пластичних хірургів світу та виконую всі види пластичних операцій. Уже більше ніж 2600
                 пацієнтів з різних країн довірили мені свою красу.
